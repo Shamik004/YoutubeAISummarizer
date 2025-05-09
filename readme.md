@@ -29,8 +29,8 @@ This is a FastAPI-based web service that takes a YouTube video URL, extracts its
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/youtube-gemini-summarizer.git
-   cd youtube-gemini-summarizer
+   git clone https://github.com/Shamik004/YoutubeAISummarizer.git
+   cd YoutubeAISummarizer
 
 2. **Install dependencies**
 
@@ -47,15 +47,16 @@ This is a FastAPI-based web service that takes a YouTube video URL, extracts its
 4. **Run the FastAPI app**
 
    ```bash
-   uvicorn main:app --reload
+   uvicorn app:app --reload
    ```
 
 ---
 
 ## 🧪 Usage
 
-### Endpoint
+### Local Testing
 
+Start the server and visit:
 ```
 GET /summarize?url=https://www.youtube.com/watch?v=VIDEO_ID
 ```
@@ -72,8 +73,8 @@ GET http://127.0.0.1:8000/summarize?url=https://www.youtube.com/watch?v=uthjpYKD
 
 ```json
 {
-  "topic_name": "Machine Learning Basics",
-  "topic_summary": "This video introduces the core concepts of machine learning including supervised and unsupervised learning, with real-world examples."
+    "topic_name": "Pythagorean Theorem",
+    "topic_summary": "The video explains how to find the length of the hypotenuse (X) of a right triangle using the Pythagorean theorem (a² + b² = c²). Given the lengths of the legs (6 and 8), the equation 6² + 8² = x² is solved to find that x = 10."
 }
 ```
 
@@ -93,7 +94,6 @@ GET http://127.0.0.1:8000/summarize?url=https://www.youtube.com/watch?v=uthjpYKD
 
 ## ⚠️ Notes
 
-* Your **Google Gemini API key must remain secret**. Do not commit `.env` to version control.
 * Transcript will only be fetched if it's publicly available for the video and supported in specified languages.
 * You may encounter errors if the video has no captions/transcripts enabled.
 
